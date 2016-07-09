@@ -23,12 +23,6 @@ def tax_calculator(default_tax, state, cost):
         total_cost = float(cost) * (1 + float(default_tax))
         return "${:.2f}".format(total_cost) #format result in currency
 
-
-# print tax_calculator(.05,"CA",100)
-# print tax_calculator(.05,"NV",100)
-
-
-
 #####################################################################
 # PART TWO
 
@@ -88,10 +82,21 @@ def hometown_greeting(town_name, first_name, last_name):
 #    inside of it. The outer function should take ``x``, an integer which
 #    defaults to 1. The inner function should take ``y`` and add ``x`` and ``y`` together.
 
-# 2. Call the function ``increment()`` with x = 5. Assign what is returned to a variable name, addfive. Call 
-#    addone with y = 5. Call again with y = 20. 
+def increment (x=1):
+    def add(y):
+        return x + y
+    return add(5)
+
+# 2. Call the function ``increment()`` with x = 5. Assign what is returned to a variable name, addfive. Call addone with y = 5. Call again with y = 20. 
+
+addfive = increment(5)
+print addfive
 
 # 3. Make a function that takes in a number and a list of numbers. It should append
 #    the number to the list of numbers and return the list.
+
+def num_list_append(number,num_list):
+    num_list.append(number)
+    return num_list
 
 #####################################################################
